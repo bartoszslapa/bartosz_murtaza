@@ -1,5 +1,5 @@
 # greeting Murtaza
-for a in range (1, 2):
+for a in range (1, 4):
     print ("Czesc Murtaza, for the", a, "time!")
 
 print("---------------------")      # a nice separator
