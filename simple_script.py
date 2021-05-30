@@ -2,13 +2,10 @@
 for a in range (1, 21):
     print ("Czesc Murtaza, for the", a, "time!")
 
+print("---------------------")      # a nice separator
 
-#finding the largest number
-largest_number = [1 , 2, 6 , 20]
-print (max.largest_number)
+# finding the largest number
+list_of_numbers = [1, 2, 6, 20]     # i've changed the name of the variable to be more adequate
 
-#there is an error in line 7
-
-
-    
-
+print (max(list_of_numbers))        # max is a FUNCTION u have to use on your list
+                                    # should work now
