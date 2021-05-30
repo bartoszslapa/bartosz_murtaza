@@ -1,4 +1,3 @@
-print("Czesc Murtaza.")
-for a in range (20):
-    print (a)
+for a in range (21):
+    print ("Czesc Murtaza, for the", a, "time!")
     
