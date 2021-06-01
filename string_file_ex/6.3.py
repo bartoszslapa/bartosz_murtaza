@@ -1,57 +1,50 @@
-# **Exercise (optional)**: Write a function that takes a string as argument, 
-# and creates a new string that is a copy of the argument, except that every 
-# non-letter is replaced by a space (e.g., "`ph@t l00t`" is changed to "`ph t l  t`"). 
-# To write such a function, you will start with an empty string, and traverse the 
-# characters of the argument one by one. When you encounter a character that is 
-# acceptable, you add it to the new string. When it is not acceptable, you add a space 
-# to the new string. Note that you can check whether a character is acceptable by simple 
-# comparisons, e.g., any lower case letter can be found using the test `if ch >= 'a' and ch <= 'z':`. 
-
 # String cleaning function
 def clean_string(string):
-    
-clean_string("Aph@t 100t")
+    new_string = ""
+    for character in string:        
+        # check if it's alphabetical if so
+        # if (character >= 'a' and character <= 'z') or (character >= 'A' and character <= 'Z'):
+        if character.lower() >= 'a' and character.lower() <= 'z':
+            # add it to the temp_string
+            # left_side = right_side
+            # assign the value of left side to the right side calculate right side
+            new_string = new_string + character
+            # shorter version: temp_string += character
+        else:
+            # else you add a space to your temp_string
+            new_string += " "
+    return new_string
 
+def wood_counter(text):
+    # first we create a counter = 0
+    counter = 0
 
+    # we clean the string
+    cleaned_string = clean_string(text)
 
+    # split the text and store words in a LIST
+    # it's a list of STRINGS !! it's not a string
+    text_splitted = cleaned_string.split()
 
+    # check word by word if we see "wood"
+    for word in text_splitted:  # here we check every STRING in the list
+        if word.lower() == "wood":
+            counter += 1
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# **Exercise 6.3:** In the text below, count how often the word "wood" occurs 
-# (using program code, of course). Capitals and lower case letters may both be 
-# used, and you have to consider that the word "wood" should be a separate word, 
-# and not part of another word. Hint: If you did the exercises from this chapter, 
-# you already developed a function that "cleans" a text. Combining that function 
-# with the `split()` function more or less solves the problem for you.
+    return counter
 
 text = """How much wood would a woodchuck chuck
 If a woodchuck could chuck wood?
 He would chuck, he would, as much as he could,
 And chuck as much as a woodchuck would
 If a Mr. Smith could chuck wood\n\r\t."""
+
+how_much_wood = wood_counter(text)
+print(how_much_wood)
+
+
+
+
 
 
 
